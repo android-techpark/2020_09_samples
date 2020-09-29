@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">techpark</string>
+    <string name="my_text">0</string>
+    <string name="click_me">inc</string>
+    <string name="click_me_dec">decrement</string>
+    <string name="launch_new">start</string>
+</resources>
