@@ -17,7 +17,7 @@ public class DynamicFragmentFixedActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dynamic_fragment);
-        if (savedInstanceState == null) {
+        if (getSupportFragmentManager().findFragmentById(R.id.fragment_container) == null) {
             getSupportFragmentManager()
                     .beginTransaction()
                     .add(R.id.fragment_container, new BlueFragment())

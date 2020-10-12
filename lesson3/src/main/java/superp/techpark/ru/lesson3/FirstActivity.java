@@ -2,10 +2,13 @@ package superp.techpark.ru.lesson3;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 
 import java.util.Random;
 
+import ru.techpark.lesson3.lib.ModuleFragment;
+import superp.techpark.ru.lesson3.fragment_part.activity.CooperationActivity;
 import superp.techpark.ru.lesson3.fragment_part.activity.DynamicFragmentActivity;
 import superp.techpark.ru.lesson3.fragment_part.activity.DynamicFragmentFixedActivity;
 import superp.techpark.ru.lesson3.fragment_part.activity.LayoutFragmentActivity;
@@ -19,19 +22,24 @@ public class FirstActivity extends BaseActivity {
     public static final String STATE = "state";
     private TextView mText;
 
+    private static String sString;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.d("Lifecycle", "myString " + sString);
         mText = findViewById(R.id.dynamic_text);
 //        restoreState(savedInstanceState);
         findViewById(R.id.second).setOnClickListener(v ->
                 startActivity(new Intent(FirstActivity.this, SecondActivity.class))
         );
 
-        findViewById(R.id.set_text).setOnClickListener(v ->
-                mText.setText(String.valueOf(new Random().nextInt()))
-        );
+        findViewById(R.id.set_text).setOnClickListener(v -> {
+            String text = String.valueOf(new Random().nextInt());
+            mText.setText(text);
+            sString = text;
+        });
 
         initFragmentRelated();
     }
@@ -46,7 +54,7 @@ public class FirstActivity extends BaseActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString(STATE, mText.getText().toString());
+//        outState.putString(STATE, mText.getText().toString());
     }
 
     @Override
@@ -79,6 +87,17 @@ public class FirstActivity extends BaseActivity {
 
         findViewById(R.id.btn_state_loss).setOnClickListener(view ->
                 startActivity(new Intent(FirstActivity.this, StateLossActivity.class))
+        );
+
+        findViewById(R.id.hello_module).setOnClickListener(view ->
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.container, new ModuleFragment(), "tag")
+                    .commitAllowingStateLoss()
+        );
+
+        findViewById(R.id.btn_coop).setOnClickListener(view ->
+                startActivity(new Intent(FirstActivity.this, CooperationActivity.class))
         );
     }
 }

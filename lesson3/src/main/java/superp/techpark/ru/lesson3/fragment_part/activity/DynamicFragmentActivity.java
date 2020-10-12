@@ -5,6 +5,7 @@ import android.os.Bundle;
 import superp.techpark.ru.lesson3.BaseActivity;
 import superp.techpark.ru.lesson3.R;
 import superp.techpark.ru.lesson3.fragment_part.fragment.BlueFragment;
+import superp.techpark.ru.lesson3.fragment_part.fragment.RedFragment;
 
 
 /**

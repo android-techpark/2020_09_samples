@@ -8,7 +8,9 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.fragment.app.FragmentActivity;
 import superp.techpark.ru.lesson3.R;
+import superp.techpark.ru.lesson3.fragment_part.activity.CooperationActivity;
 
 /**
  * Fragment, показывающий механизм взаимодействия Activity и Fragment'а.

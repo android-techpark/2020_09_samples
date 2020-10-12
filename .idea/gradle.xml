@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/lesson1" />
             <option value="$PROJECT_DIR$/lesson2" />
             <option value="$PROJECT_DIR$/lesson3" />
+            <option value="$PROJECT_DIR$/lesson3_lib" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

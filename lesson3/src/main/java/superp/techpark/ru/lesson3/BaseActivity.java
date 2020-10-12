@@ -50,7 +50,7 @@ public class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.d(getLogTag(), "onDestroy");
+        Log.d(getLogTag(), "onDestroy " + isChangingConfigurations());
     }
 
     @Override
