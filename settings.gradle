@@ -1,3 +1,5 @@
+include ':lesson8'
+include ':lesson7'
 include ':lesson6'
 include ':lesson5'
 include ':lesson4'
