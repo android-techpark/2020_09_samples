@@ -77,6 +77,6 @@ class SnowFlake {
         int width = canvas.getWidth();
         int height = canvas.getHeight();
         move(width, height);
-        canvas.drawRect(position.x, position.y, position.x + flakeSize, position.y + flakeSize, paint);
+        canvas.drawCircle(position.x, position.y, flakeSize, paint);
     }
 }

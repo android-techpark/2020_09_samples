@@ -23,4 +23,5 @@
 
     <string name="app_description">Animation demo application for Lecture 9</string>
     <string name="technopark">park.mail.ru</string>
+    <string name="coordinator_sample_title">Coordinator Sample</string>
 </resources>

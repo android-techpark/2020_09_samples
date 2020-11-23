@@ -101,12 +101,12 @@ public class AnimatorFragment extends Fragment {
     void onTextColorSize() {
         reset();
 
-        animator = ValueAnimator.ofInt(startFontSize, endFontSize);
+        animator = ValueAnimator.ofFloat(startFontSize, endFontSize);
         animator.setDuration(3000L);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(final ValueAnimator animation) {
-                target.setTextSize((int) animation.getAnimatedValue());
+                target.setTextSize((float) animation.getAnimatedValue());
             }
         });
         animator.start();
